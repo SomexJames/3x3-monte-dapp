@@ -3,9 +3,9 @@ import { GlobalState } from "../global_states/global_state";
 
 export function MainMenu() {
     const { currentUserInfo, setCurrentUserInfo, currentGameInfo, setGameInfo, accReqPending, setAccReqPending} = useContext(GlobalState);
-    const currentBet = currentUserInfo.currentBet;
+    const currentBet = currentGameInfo.currentBet;
     function mainMenu() {
-        setCurrentUserInfo(prev => {
+        setGameInfo(prev => {
             return {
                 ...prev,
                 currentBet: null
