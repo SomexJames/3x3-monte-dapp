@@ -7,12 +7,6 @@ export function GamePageSelector() {
     const { currentUserInfo, setCurrentUserInfo, currentGameInfo, setGameInfo, accReqPending, setAccReqPending} = useContext(GlobalState);
     const currentBet = currentGameInfo.currentBet;
     useEffect(() => {
-        // setCurrentUserInfo(prev => {
-        //     return {
-        //         ...prev,
-        //         currentBet
-        //     }
-        // })
     },[currentGameInfo.currentBet])
 
     if (currentBet !== null) {

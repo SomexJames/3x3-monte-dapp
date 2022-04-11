@@ -30,7 +30,6 @@ export function Buy() {
     const placeOrder = async (e) => {
         e.preventDefault();
         const buySize = value.inputValue;
-        console.log(buySize);
 
         await erc20
             .connect(signer)

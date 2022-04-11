@@ -12,7 +12,6 @@ export function BaseSelector() {
     var signerAddress = currentUserInfo.signerAddress;
     var erc20 = currentUserInfo.erc20;
     useEffect(() => {
-        console.log("useeffect");
         const sessStorage = JSON.parse(sessionStorage.getItem(accReqPending));
         setAccReqPending(() => {
             if (accReqPending !== null && sessStorage === null) {

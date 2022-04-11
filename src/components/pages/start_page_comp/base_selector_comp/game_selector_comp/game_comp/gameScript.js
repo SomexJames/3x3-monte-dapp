@@ -10,6 +10,7 @@ import { MainMenu } from "../../../../../buttons/mainMenu";
 export function GameScript() {
     const { currentUserInfo, setCurrentUserInfo, currentGameInfo, setGameInfo, accReqPending, setAccReqPending} = useContext(GlobalState);
     const erc20 = currentUserInfo.erc20;
+    const currentBet = currentGameInfo.currentBet;
     const signer = currentUserInfo.signer;
     const contractAddress = currentUserInfo.contractAddress;
     const signerAddress = currentUserInfo.signerAddress;

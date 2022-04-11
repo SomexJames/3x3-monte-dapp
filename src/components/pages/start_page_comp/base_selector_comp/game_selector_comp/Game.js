@@ -6,7 +6,6 @@ export function Game() {
     const { currentUserInfo, setCurrentUserInfo, currentGameInfo, setGameInfo, accReqPending, setAccReqPending} = useContext(GlobalState);
     const signer = currentUserInfo.signer;
     var signerAddress = currentUserInfo.signerAddress;
-    console.log("body just ran");
     useEffect(() => {
         async function getAddress() {
             const currSignerAddress = await signer.getAddress();

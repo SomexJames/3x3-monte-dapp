@@ -13,16 +13,11 @@ export function Base() {
     const updateUser = async () => {
         const _accReqPending = sessionStorage.getItem(accReqPending);
         const _ethReqP = await handleEthAccReq();
-        console.log(_ethReqP);
-        console.log(_accReqPending);
         if (_accReqPending == "false") {
             if (_ethReqP) {
-                console.log("not the start and is pending");
                 setAccReqPending(() => {
                     sessionStorage.setItem(accReqPending, true)});
             } else {
-                console.log("not the start and is not pending");
-                // signer stuff
                 setAccReqPending(() => {
                     sessionStorage.setItem(accReqPending, false);
                 });
