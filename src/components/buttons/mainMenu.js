@@ -12,7 +12,8 @@ export function MainMenu() {
                 currentBet: null,
                 level: 0,
                 cards: [],
-                message: null
+                message: null,
+                gameOver: false
             }
         });
         return (<GamePageSelector />)
