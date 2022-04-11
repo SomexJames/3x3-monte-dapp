@@ -9,7 +9,10 @@ export function MainMenu() {
         setGameInfo(prev => {
             return {
                 ...prev,
-                currentBet: null
+                currentBet: null,
+                level: 0,
+                cards: [],
+                message: null
             }
         });
         return (<GamePageSelector />)
