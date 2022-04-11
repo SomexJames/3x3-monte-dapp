@@ -39,41 +39,7 @@ export function GlobalStateDefault({ children })  {
         }
       );
 
-    
-
-  // useEffect(() => {
-  //   const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
-  //   setCurrentUserInfo(prev => {return{...prev, provider}});
-  // }), [currentUserInfo.provider];
-
-  // useEffect(() => {
-  //   const signer = currentUserInfo.provider.getSigner();
-  //   const signerAddress = currentUserInfo.provider.getSigner().getAddress();
-  //   setCurrentUserInfo(prev => {return{...prev, signer, signerAddress}});
-  // }), [currentUserInfo.signer, currentUserInfo.signerAddress];
-
-//   function Connect() {
-//     const connectFunction = async () => {
-//         const currProvider = new ethers.providers.Web3Provider(window.ethereum, "any");
-//         await currProvider.send("eth_requestAccounts", []);
-//         const signer = currProvider.getSigner();
-//         const signerAddress = await signer.getAddress();
-
-//         const updatedStates = {
-//             provider: currProvider,
-//             signer: signer,
-//             signerAddress: signerAddress,
-//             balance: "-"
-//         }
-    
-//       setCurrentUserInfo(updatedStates);
-//     }
-//     connectFunction();
-// }
-
   const globalStateValue = useMemo(() => ({ currentUserInfo, setCurrentUserInfo, currentGameInfo, setGameInfo, accReqPending, setAccReqPending}));
-  // console.log(currentUserInfo)
-  console.log(globalStateValue)
 
   return (
     <GlobalState.Provider value={globalStateValue}>

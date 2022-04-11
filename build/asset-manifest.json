@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/3x3-monte-dapp/static/js/main.7a4b3a1a.js",
+    "index.html": "/3x3-monte-dapp/index.html",
+    "main.7a4b3a1a.js.map": "/3x3-monte-dapp/static/js/main.7a4b3a1a.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.7a4b3a1a.js"
+  ]
+}

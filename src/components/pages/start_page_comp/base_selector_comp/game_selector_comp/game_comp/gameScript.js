@@ -4,11 +4,13 @@ import { GameStart } from "./gameStart";
 import { WinningCard, BlankCard, JackPotCard } from "../../../../../functions/createCards";
 import { NewGame } from "../../../../../buttons/newGame";
 import { Continue } from "../../../../../buttons/continue";
+import { MainMenu } from "../../../../../buttons/mainMenu";
 
 
 export function GameScript() {
     const { currentUserInfo, setCurrentUserInfo, currentGameInfo, setGameInfo, accReqPending, setAccReqPending} = useContext(GlobalState);
     const erc20 = currentUserInfo.erc20;
+    const signer = currentUserInfo.signer;
     const contractAddress = currentUserInfo.contractAddress;
     const signerAddress = currentUserInfo.signerAddress;
     const gameOver = currentGameInfo.gameOver;
@@ -21,20 +23,36 @@ export function GameScript() {
     if (!gameOver) {
         return (<GameStart />)
     } else if (level == 0) {
-        return (
-            <>
-                <h3>Game Over!</h3>
-                <div className="game-area">
-                    <div className="cards">
-                            {cards}
+        if (currentBet != "freePlay") {
+            return (
+                <>
+                    <h3>Game Over!</h3>
+                    <div className="game-area">
+                        <div className="cards">
+                                {cards}
+                        </div>
                     </div>
-                </div>
-                <NewGame />  
-            </>
-        )
+                    <NewGame />
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <h3>Game Over!</h3>
+                    <div className="game-area">
+                        <div className="cards">
+                                {cards}
+                        </div>
+                    </div>
+                    <NewGame />
+                    <MainMenu />
+                </>
+            )
+        }
+        
     } else if (level == 4) {
         if (currentBet != "freePlay") {
-            erc20.sendPayout(contractAddress, ethers.utils.parseUnits(1500, 18), signerAddress);
+            erc20.connect(signer).sendPayout(contractAddress, ethers.utils.parseUnits(1500, 18), signerAddress);
         }
         return (
             <>

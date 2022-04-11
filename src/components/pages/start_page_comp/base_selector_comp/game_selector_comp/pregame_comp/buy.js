@@ -36,6 +36,7 @@ export function Buy() {
             .connect(signer)
             .exchange({value: ethers.utils.parseEther(String(buySize/5000))})
             .catch(e => e.code == "INSUFFICIENT_FUNDS" ? alert("MetaMask says: INSUFFICENT FUNDS") : alert(e));
+            
         setCurrentUserInfo(prev => {
             return {
                 ...prev,
