@@ -26,11 +26,8 @@ export function GlobalStateDefault({ children })  {
 
   const [currentGameInfo, setGameInfo] = useState(() => {
     return {
-            deck: [],
             level: 0,
             cards: [],
-            dealer: null,
-            player: null,
             inputValue: '',
             currentBet: null,
             gameOver: false,

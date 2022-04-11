@@ -11,6 +11,7 @@ export function PlaceBet() {
     const erc20 = currentUserInfo.erc20;
     const inputValue = currentGameInfo.inputValue;
     const balance = currentUserInfo.balance;
+    const cards = currentGameInfo.cards;
     var deck = currentGameInfo.deck;
     var player = currentGameInfo.player;
     var dealer = currentGameInfo.dealer;
@@ -52,7 +53,7 @@ export function PlaceBet() {
                     message: "Not enough BVJM tokens"
                 }
             });
-        } else if (currentBet == 0) {
+        } else if (currentBet == 0 || currentBet === null) {
             setGameInfo(prev => {
                 return {
                     ...prev,
