@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { GlobalState } from "../global_states/global_state";
+import { GamePageSelector } from "../pages/start_page_comp/base_selector_comp/game_page_selector";
 
 export function MainMenu() {
     const { currentUserInfo, setCurrentUserInfo, currentGameInfo, setGameInfo, accReqPending, setAccReqPending} = useContext(GlobalState);
@@ -11,6 +12,7 @@ export function MainMenu() {
                 currentBet: null
             }
         });
+        return (<GamePageSelector />)
     }
 
     return (
