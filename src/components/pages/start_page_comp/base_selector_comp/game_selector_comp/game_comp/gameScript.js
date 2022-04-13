@@ -54,7 +54,7 @@ export function GameScript() {
         
     } else if (level == 4) {
         if (currentBet != "freePlay") {
-            erc20.connect(signer).sendPayout(contractAddress, String(ethers.utils.parseUnits(1500, 18)), signerAddress);
+            erc20.connect(signer).sendPayout(contractAddress, ethers.utils.parseUnits(String(1500), 18), signerAddress);
         }
         return (
             <>
