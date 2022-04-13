@@ -5,6 +5,7 @@ import { WinningCard, BlankCard, JackPotCard } from "../../../../../functions/cr
 import { NewGame } from "../../../../../buttons/newGame";
 import { Continue } from "../../../../../buttons/continue";
 import { MainMenu } from "../../../../../buttons/mainMenu";
+import { ethers } from "ethers";
 
 
 export function GameScript() {
