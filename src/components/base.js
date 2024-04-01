@@ -28,11 +28,11 @@ export function Base() {
         };
     }
         return (
-                <div class="rt-container">
-                    <div class="col-rt-12">
-                        <div class="Scriptcontent">
-                            <div class="pregame_background">
-                                <div class="box">
+                <div className="rt-container">
+                    <div className="col-rt-12">
+                        <div className="Scriptcontent">
+                            <div className="pregame_background">
+                                <div className="box">
                                     <h3>Click "Connect" to connect to your Web3 Wallet!</h3>
                                     <button onClick={() => updateUser()}>Connect</button>
                                 </div>
