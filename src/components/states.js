@@ -18,7 +18,7 @@ export function GlobalStateDefault({ children })  {
           signerAddress: "-",
           balance: "-",
           erc20: "-",
-          contractAddress: "0xbbf8Ca1DCB0968Ced01bA88dc96F967Fd8734ceA",
+          contractAddress: "0xF848ad73488D71a707D7a50217376Cf7459535df",
           updateBalance: 0
         }
     }
