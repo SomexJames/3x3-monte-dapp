@@ -50,7 +50,7 @@ export function PlaceBet() {
             setGameInfo(prev => {
                 return {
                     ...prev,
-                    message: "Not enough BVJM tokens"
+                    message: "Not enough KBUX"
                 }
             });
         } else if (currentBet == 0 || currentBet === null) {
@@ -63,7 +63,7 @@ export function PlaceBet() {
                 }
             });
         } else {
-            await erc20.connect(signer).transfer("0xa00D2f69DaAF2DA3d4F7b5967230e8D1D0631211", ethers.utils.parseUnits(currentBet, 18));
+            await erc20.connect(signer).transfer("0xe1c85AeeEDc1bE0492B4bd70Ad512058aCdB0bA2", ethers.utils.parseUnits(currentBet, 18));
             setGameInfo(prev => {
                 return {
                     ...prev,

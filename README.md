@@ -101,7 +101,7 @@ The start page has a static header that will always be rendered and remain uncha
 
 ### Pregame Page
 The Pregame.js file is just a container for 4 components: Buy(), GetMyBalance(), PlaceBet(), PreBetMessage().  
-Buy() handles when the user wants to purchase the ERC20 game tokens (BVJM). It also divides whatever token amount the user inputs by 5000 since the arbitrary exchange rate is 0.1 ETH for 500 BVJM tokens (500/0.1=5000). Also, it's important to note that it uses the “parseEther()” method since smart contracts use the wei denomination.  
+Buy() handles when the user wants to purchase the ERC20 game tokens (KBUX). It also divides whatever token amount the user inputs by 5000 since the arbitrary exchange rate is 0.1 ETH for 500 KBUX tokens (500/0.1=5000). Also, it's important to note that it uses the “parseEther()” method since smart contracts use the wei denomination.  
 GetMyBalance() essentially just updates the balance message any time its parent component is re-rendered or when Buy() executes.  
 PlaceBet() is similar to Buy() except for the fact that instead of the user exchanging ETH for tokens, the user exchanges tokens for plays. Once the user “inserts” their tokens for their desired number of plays, it first checks to see if the input value is less than their current token balance and is divisible by 10. And then checks to see if the input was “0” or blank. If it was, then the user can play unlimited games without the chance of winning the jackpot. If not, a metamask window will pop up requesting confirmation for the transaction.  
 PreBetMessage() is basically just a container for HTML elements.

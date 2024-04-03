@@ -47,7 +47,7 @@ export function Buy() {
 
     return (
         <>
-            <p>0.1 ETH = 500 BVJM</p>
+            <p>0.1 ETH = 500 KBUX</p>
             <form onSubmit={placeOrder}>
                 <input type="text" placeholder="enter here to buy" value={value.inputValue} onChange={updateValue}/>
                 <button onClick={placeOrder}>Buy</button>
