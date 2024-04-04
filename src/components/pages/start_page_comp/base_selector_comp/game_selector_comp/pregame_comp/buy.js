@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react"
 import { GlobalState } from "../../../../../global_states/global_state";
 import { ethers } from "ethers";
 
+
 export function Buy() {
     const { currentUserInfo, setCurrentUserInfo, currentGameInfo, setGameInfo, accReqPending, setAccReqPending } = useContext(GlobalState);
     const [value, setValue] = useState({inputValue: ""});

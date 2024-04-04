@@ -4,8 +4,6 @@ import { handleEthAccReq } from "./functions/handleEthAccReq";
 import { useState } from "react";
 
 
-
-
 export function Base() {
     const { currentUserInfo, setCurrentUserInfo } = useContext(GlobalState);
     const [ accReqPending, setAccReqPending] = useState(false);;
