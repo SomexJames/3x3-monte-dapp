@@ -4,6 +4,7 @@ import { Connect } from "./base_selector_comp/Connect";
 import { GamePageSelector } from "./base_selector_comp/game_page_selector";
 import { Retry } from "./base_selector_comp/Retry";
 
+
 export function BaseSelector() {
     const { currentUserInfo, setCurrentUserInfo, accReqPending, setAccReqPending } = useContext(GlobalState);
     const contractAddress = currentUserInfo.contractAddress;
@@ -11,28 +12,24 @@ export function BaseSelector() {
     var signer = currentUserInfo.signer;
     var signerAddress = currentUserInfo.signerAddress;
     var erc20 = currentUserInfo.erc20;
+
     useEffect(() => {
         const sessStorage = JSON.parse(sessionStorage.getItem(accReqPending));
-        setAccReqPending(() => {
-            if (accReqPending !== null && sessStorage === null) {
-                return accReqPending;
-            } else if (accReqPending !== sessStorage && sessStorage !== null) {
+        setAccReqPending((prevAccReqPending) => {
+            if (prevAccReqPending !== sessStorage && sessStorage !== null) {
                 return sessStorage;
-            } else return accReqPending
-        })
-    },[accReqPending]);
+            }
+            return prevAccReqPending;
+        });
+    }, [accReqPending, setAccReqPending]);
 
     if (accReqPending) {
-        return (
-            <Retry />
-        )
+        return <Retry />;
     }
-    else if (currentUserInfo.signerAddress != "-") {
-        return (<GamePageSelector />)
+
+    if (signerAddress !== "-") {
+        return <GamePageSelector />;
     }
-    else {
-        return (
-            <Connect />
-        )
-    }
+
+    return <Connect />;
 }
