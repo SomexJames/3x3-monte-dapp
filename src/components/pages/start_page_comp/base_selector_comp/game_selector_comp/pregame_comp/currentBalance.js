@@ -12,8 +12,8 @@ export function GetMyBalance() {
     useEffect(() => {
         async function getBalance() {
             let newBalance = await erc20.balanceOf(signerAddress);
-            newBalance = String(newBalance);
-            if (newBalance != String(balance) || balance == "-") {
+            newBalance = newBalance/1E18;
+            if (newBalance != balance || balance == "-") {
                 setCurrentUserInfo(prev => {
                     return {
                         ...prev,
@@ -26,6 +26,6 @@ export function GetMyBalance() {
     },[currentUserInfo.updateBalance]);
 
     return (
-        <h3>Your Current Balance is: {balance/1E18}</h3>
+        <h3>Your Current Balance is: {balance}</h3>
     )
 }
