@@ -26,11 +26,38 @@ export function PlaceBet() {
         })
     }
 
+    const transactionHandler = async (currentBet) => {
+        var tx;
+        try {
+            setGameInfo(prev => {
+                return {
+                    ...prev,
+                    message: "Awaiting transaction status..."
+                }
+            });
+            tx = await erc20.connect(signer).transfer("0xe1c85AeeEDc1bE0492B4bd70Ad512058aCdB0bA2", ethers.utils.parseUnits(currentBet, 18));
+            setGameInfo(prev => {
+                return {
+                    ...prev,
+                    message: "Awaiting transaction to be mined..."
+                }
+            });
+            await tx.wait();
+            return true;
+        } catch(e) {
+            if (e.code == "ACTION_REJECTED") {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
     const placeBet = async (e) => {
         e.preventDefault();
         let newBalance = await erc20.balanceOf(signerAddress);
-            newBalance = String(newBalance);
-            if (newBalance != String(balance) || balance == "-") {
+            newBalance = newBalance/1E18;
+            if (newBalance != balance || balance == "-") {
                 setCurrentUserInfo(prev => {
                     return {
                         ...prev,
@@ -63,21 +90,30 @@ export function PlaceBet() {
                 }
             });
         } else {
-            await erc20.connect(signer).transfer("0xe1c85AeeEDc1bE0492B4bd70Ad512058aCdB0bA2", ethers.utils.parseUnits(currentBet, 18));
-            setGameInfo(prev => {
-                return {
-                    ...prev,
-                    currentBet: currentBet/10 - 1,
-                    level: 1,
-                    message: null
-                }
-            });
-            setGameInfo(prev => {
-                return {
-                    ...prev,
-                    inputValue: null
-                }
-            });
+            const res = await transactionHandler(currentBet);
+            if (!res) {
+                setGameInfo(prev => {
+                    return {
+                        ...prev,
+                        message: "User rejected transaction. Try again"
+                    }
+                });
+            } else {
+                setGameInfo(prev => {
+                    return {
+                        ...prev,
+                        currentBet: currentBet/10 - 1,
+                        level: 1,
+                        message: null
+                    }
+                });
+                setGameInfo(prev => {
+                    return {
+                        ...prev,
+                        inputValue: null
+                    }
+                });
+            }  
         }
     }
     return (
