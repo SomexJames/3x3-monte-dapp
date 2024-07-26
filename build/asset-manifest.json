@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.c9eeebec.js",
-    "index.html": "/index.html",
-    "main.c9eeebec.js.map": "/static/js/main.c9eeebec.js.map"
+    "main.js": "/3x3-monte-dapp/static/js/main.c9eeebec.js",
+    "index.html": "/3x3-monte-dapp/index.html",
+    "main.c9eeebec.js.map": "/3x3-monte-dapp/static/js/main.c9eeebec.js.map"
   },
   "entrypoints": [
     "static/js/main.c9eeebec.js"
