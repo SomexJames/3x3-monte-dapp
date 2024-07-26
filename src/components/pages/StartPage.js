@@ -5,7 +5,7 @@ import { BaseSelector } from "./start_page_comp/base_selector"
 
 
 
-export function StartPage() {
+function StartPage() {
     const { currentUserInfo, setCurrentUserInfo, accReqPending, setAccReqPending } = useContext(GlobalState);
 
     return (
@@ -17,3 +17,6 @@ export function StartPage() {
 
     )
 }
+
+
+export default StartPage;

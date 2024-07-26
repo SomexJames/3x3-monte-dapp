@@ -1,13 +1,15 @@
-import { StartPage } from "./components/pages/StartPage";
-import { GlobalStateDefault, GlobalStates } from "./components/states";
+import StartPage from "./components/pages/StartPage";
+import GlobalStateDefault from "./components/states";
 
 
-export default function MyApp() {
-
+function MyApp() {
     return (
-        <GlobalStateDefault>
-            <StartPage />
-        </GlobalStateDefault>
-    )
-
+        <>
+            <GlobalStateDefault>
+                <StartPage />
+            </GlobalStateDefault>
+        </>   
+    );
 }
+
+export default MyApp;

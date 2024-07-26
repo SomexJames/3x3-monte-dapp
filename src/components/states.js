@@ -5,7 +5,7 @@ import { GlobalState } from "./global_states/global_state";
 import { ethers } from "ethers";
 
 
-export function GlobalStateDefault({ children })  {
+function GlobalStateDefault({ children })  {
 
   const [ accReqPending, setAccReqPending ] = useState(
     null
@@ -45,3 +45,6 @@ export function GlobalStateDefault({ children })  {
     )
 
 }
+
+
+export default GlobalStateDefault;
