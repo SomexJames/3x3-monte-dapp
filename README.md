@@ -5,17 +5,19 @@
 
 <br />
 
-<h3 align="center">3x3 Monte Dapp</h3>
+<h3 align="center">3x3 Card Monte Dapp</h3>
 
   <p align="center">
     My Personal Coding Project Mixed with a FinTech Project
     <br />
     <a href="https://github.com/SomexJames/3x3-monte-dapp"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
     <a href="https://github.com/SomexJames/3x3-monte-dapp/issues">Report Issues</a>
     ·
     <a href="https://github.com/SomexJames/3x3-monte-dapp/issues">Submit Improvements</a>
+    <br />
+    <br />
+    <a href = "https://youtu.be/9qn5zP-3hn4"><strong>Video Walkthrough</strong></a>
   </p>
 </div>
 
